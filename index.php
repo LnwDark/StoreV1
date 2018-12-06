@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
 <!--    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
-     <link href="/assets/css/bootstrap.css" rel="stylesheet">
+     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <style>
 
     </style>
@@ -115,12 +115,12 @@
     </div>
 </div>
 
-<script src="/assets/js/jquery-3.3.1.min.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/vue.js"></script>
-<script src="/assets/js/vue-select.js"></script>
-<script src="/assets/js/axios.min.js"></script>
-<script src="/assets/js/app.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/vue-select.js"></script>
+<script src="assets/js/axios.min.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
 <?php
