@@ -10,7 +10,7 @@ Vue.component('v-select', VueSelect.VueSelect);
 let app = new Vue({
     el: '#app',
     data: {
-        URL_SERVE: 'http://127.59.240.55',
+        URL_SERVE: 'http://139.59.240.55',
         select: '',
         dataListProduct: [],
         dataHistory: [],
@@ -102,7 +102,8 @@ let app = new Vue({
             })
         },
         cancel() {
-            location.reload();
+            location.href="index.php";
+            // location.reload();
         },
         print() {
             let vm = this;
@@ -122,10 +123,12 @@ let app = new Vue({
             let amount = model.amount;
             let created_at = model.created_at;
             let part_name = model.product_name;
-            vm.cancel();
-            axios.get('test.php?id=' + barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name).then(function (response) {
-                console.log(response);
-            });
+           // vm.cancel();
+           let URL ='index.php?id='+ barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name
+            location.href=URL
+            // axios.get('index.php?id=' + barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name).then(function (response) {
+            //     console.log(response);
+            // });
             axios.get(`${vm.URL_SERVE}/pcb/api/update-reprint?id=`+model.id).then(function (response) {
                 if (response.status === 200) {
                     console.log(response);
