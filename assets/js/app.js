@@ -10,7 +10,7 @@ Vue.component('v-select', VueSelect.VueSelect);
 let app = new Vue({
     el: '#app',
     data: {
-        URL_SERVE: 'http://139.59.240.55',
+        URL_SERVE: 'http://localhost:9091',
         select: '',
         dataListProduct: [],
         dataHistory: [],
@@ -112,19 +112,22 @@ let app = new Vue({
             let amount = vm.dataBarcode.amount;
             let created_at = vm.dataBarcode.created_at;
             let part_name = vm.dataBarcode.part_name;
+          
             axios.get('test.php?id=' + barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name).then(function (response) {
                 console.log(response);
             })
         },
         reprint(model){
+            console.log(model);
             let vm = this;
             let barcode = model.barcode;
             let lct = model.keep_area_2;
             let amount = model.amount;
             let created_at = model.created_at;
             let part_name = model.product_name;
+            let count_lote = model.count_lote;
            // vm.cancel();
-           let URL ='index.php?id='+ barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name
+           let URL ='index.php?id='+ barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name+'&count_lote='+count_lote
             location.href=URL
             // axios.get('index.php?id=' + barcode + '&lct=' + lct+'&amount='+amount+'&created_at='+created_at+'&part_name='+part_name).then(function (response) {
             //     console.log(response);

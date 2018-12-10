@@ -139,6 +139,7 @@ $Locations = !empty($_GET['lct']) ? $_GET['lct'] : '';
 $qty = !empty($_GET['amount']) ? $_GET['amount'] : '';
 $date = !empty($_GET['created_at']) ? $_GET['created_at'] : '';
 $part_name = !empty($_GET['part_name']) ? $_GET['part_name'] : '';
+$count_lote = !empty($_GET['count_lote']) ? $_GET['count_lote'] : '';
 //$Locations = 'P-test';
 //$qty = '2000';
 //$id ='1539688124';
@@ -148,7 +149,7 @@ $position = Printer::BARCODE_TEXT_NONE;
 
 if (!empty($id)) {
     $printer->setJustification(Printer::JUSTIFY_CENTER);
-    $printer->text("N:" . $part_name . ' ' . 'Q:' . $qty . "\n");
+    $printer->text("N:" . $part_name . ' ' . 'L:' . $count_lote . "\n");
     $printer->setBarcodeHeight(50);
     $printer->setBarcodeTextPosition($position);
     $printer->barcode($id, $type);
