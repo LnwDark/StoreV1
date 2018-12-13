@@ -10,7 +10,7 @@ Vue.component('v-select', VueSelect.VueSelect);
 let app = new Vue({
     el: '#app',
     data: {
-        URL_SERVE: 'http://localhost:9091',
+        URL_SERVE: 'http://139.59.240.55',
         select: '',
         dataListProduct: [],
         dataHistory: [],
