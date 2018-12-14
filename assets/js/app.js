@@ -119,11 +119,11 @@ let app = new Vue({
         },
         fetchData(){
             let vm = this;
-            return  axios.get(`${vm.URL_SERVE}/pcb/api/history`).then(function (response) {
-                console.log(response.data);
-                if (response.status === 200) vm.dataHistory = response.data
-            });
             
+            axios.get(`${vm.URL_SERVE}/import-store/history`).then(function (response) {
+                if (response.status === 200) vm.dataHistory = response.data;
+            });
+            location.href='index.php';
            
         },
         reprint(model){
