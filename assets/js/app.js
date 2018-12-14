@@ -103,7 +103,7 @@ let app = new Vue({
         },
         cancel() {
             location.href="index.php";
-            // location.reload();
+            location.reload();
         },
         print() {
             let vm = this;
@@ -118,8 +118,13 @@ let app = new Vue({
             })
         },
         fetchData(){
-            this.getHistory();
-            location.href='index.php';
+            let vm = this;
+            return  axios.get(`${vm.URL_SERVE}/pcb/api/history`).then(function (response) {
+                console.log(response.data);
+                if (response.status === 200) vm.dataHistory = response.data
+            });
+            
+           
         },
         reprint(model){
             console.log(model);
@@ -148,6 +153,8 @@ let app = new Vue({
             axios.get(`${vm.URL_SERVE}/pcb/api/history`).then(function (response) {
                 if (response.status === 200) vm.dataHistory = response.data
             })
+            
+           
         },
         remove(item) {
             let vm = this;
