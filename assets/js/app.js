@@ -118,7 +118,8 @@ let app = new Vue({
             })
         },
         fetchData(){
-            this.getHistory()
+            this.getHistory();
+            location.href='index.php';
         },
         reprint(model){
             console.log(model);
@@ -143,6 +144,7 @@ let app = new Vue({
         },
         getHistory() {
             let vm = this;
+
             axios.get(`${vm.URL_SERVE}/pcb/api/history`).then(function (response) {
                 if (response.status === 200) vm.dataHistory = response.data
             })
