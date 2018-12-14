@@ -17,6 +17,8 @@
 
 <div class="container" id="app" v-cloak>
     <h4>นำสินค้าเข้า</h4>
+  <button  class="btn btn-info" @click="fetchData()" >ReloadData</button>
+
     <div class="row">
         <!-- Modal -->
         <div class="modal fade" id="printBarcode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -60,8 +62,8 @@
             </div>
 </div>
         </div>
-        <div class="col-md-4" v-if="productDetails != null">
 
+        <div class="col-md-4" v-if="productDetails != null">
             <ul class="list-group" v-for="model in productDetails">
                 <li class="list-group-item">
                     <label for="">part name</label>

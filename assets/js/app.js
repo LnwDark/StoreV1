@@ -117,6 +117,10 @@ let app = new Vue({
                 console.log(response);
             })
         },
+        fetchData(){
+            let URL ='index.php';
+            location.href=URL
+        },
         reprint(model){
             console.log(model);
             let vm = this;
