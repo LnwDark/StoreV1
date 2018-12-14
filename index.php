@@ -121,7 +121,7 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/vue.js"></script>
 <script src="assets/js/vue-select.js"></script>
-<script src="assets/js/axios.min.js"></script>
+<script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>
