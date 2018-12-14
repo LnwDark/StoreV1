@@ -118,8 +118,7 @@ let app = new Vue({
             })
         },
         fetchData(){
-            let URL ='index.php';
-            location.href=URL
+            this.getHistory()
         },
         reprint(model){
             console.log(model);
